@@ -40,15 +40,20 @@ class TInterface(QMainWindow):
 
         self.gridLayout.addWidget(self.hor_size_label, 0, 2, 1, 1)
 
+        self.vert_size_le = QLineEdit(self.centralwidget)
+        self.vert_size_le.setObjectName(u"vert_size_le")
+
+        self.gridLayout.addWidget(self.vert_size_le, 0, 1, 1, 1)
+
         self.transpose_pb = QPushButton(self.centralwidget)
         self.transpose_pb.setObjectName(u"transpose_pb")
 
-        self.gridLayout.addWidget(self.transpose_pb, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.transpose_pb, 2, 0, 1, 1)
 
         self.det_pb = QPushButton(self.centralwidget)
         self.det_pb.setObjectName(u"det_pb")
 
-        self.gridLayout.addWidget(self.det_pb, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.det_pb, 2, 1, 1, 1)
 
         self.tableWidget = QTableWidget(self.centralwidget)
         if (self.tableWidget.columnCount() < 2):
@@ -75,11 +80,6 @@ class TInterface(QMainWindow):
 
         self.gridLayout.addWidget(self.tableWidget, 1, 0, 1, 5)
 
-        self.save_matrix_pb = QPushButton(self.centralwidget)
-        self.save_matrix_pb.setObjectName(u"save_matrix_pb")
-
-        self.gridLayout.addWidget(self.save_matrix_pb, 2, 0, 1, 5)
-
         self.hor_size_le = QLineEdit(self.centralwidget)
         self.hor_size_le.setObjectName(u"hor_size_le")
 
@@ -93,22 +93,17 @@ class TInterface(QMainWindow):
         self.rank_pb = QPushButton(self.centralwidget)
         self.rank_pb.setObjectName(u"rank_pb")
 
-        self.gridLayout.addWidget(self.rank_pb, 3, 4, 1, 1)
+        self.gridLayout.addWidget(self.rank_pb, 2, 4, 1, 1)
 
         self.result_label = QLabel(self.centralwidget)
         self.result_label.setObjectName(u"result_label")
 
-        self.gridLayout.addWidget(self.result_label, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.result_label, 3, 0, 1, 1)
 
         self.result_le = QLineEdit(self.centralwidget)
         self.result_le.setObjectName(u"result_le")
 
-        self.gridLayout.addWidget(self.result_le, 4, 1, 1, 1)
-
-        self.vert_size_le = QLineEdit(self.centralwidget)
-        self.vert_size_le.setObjectName(u"vert_size_le")
-
-        self.gridLayout.addWidget(self.vert_size_le, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.result_le, 3, 1, 1, 1)
 
         main_window.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(main_window)
@@ -118,21 +113,14 @@ class TInterface(QMainWindow):
         self.retranslateUi(main_window)
 
         QMetaObject.connectSlotsByName(main_window)
-        # setupUi
+    # setupUi
 
     def retranslateUi(self, main_window):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Matrix", None))
-        self.save_size_pb.setText(
-            QCoreApplication.translate("main_window", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
-        self.hor_size_label.setText(
-            QCoreApplication.translate("main_window", u"\u0413\u043e\u0440. \u0440\u0430\u0437\u043c\u0435\u0440",
-                                       None))
-        self.transpose_pb.setText(QCoreApplication.translate("main_window",
-                                                             u"\u0422\u0440\u0430\u043d\u0441\u043f\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c",
-                                                             None))
-        self.det_pb.setText(QCoreApplication.translate("main_window",
-                                                       u"\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0438\u0442\u0435\u043b\u044c",
-                                                       None))
+        self.save_size_pb.setText(QCoreApplication.translate("main_window", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
+        self.hor_size_label.setText(QCoreApplication.translate("main_window", u"\u0413\u043e\u0440. \u0440\u0430\u0437\u043c\u0435\u0440", None))
+        self.transpose_pb.setText(QCoreApplication.translate("main_window", u"\u0422\u0440\u0430\u043d\u0441\u043f\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.det_pb.setText(QCoreApplication.translate("main_window", u"\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0438\u0442\u0435\u043b\u044c", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("main_window", u"1", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -154,18 +142,10 @@ class TInterface(QMainWindow):
         ___qtablewidgetitem7.setText(QCoreApplication.translate("main_window", u"1", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.save_matrix_pb.setText(QCoreApplication.translate("main_window",
-                                                               u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u043c\u0430\u0442\u0440\u0438\u0446\u0443",
-                                                               None))
-        self.vert_size_label.setText(
-            QCoreApplication.translate("main_window", u"\u0412\u0435\u0440\u0442. \u0440\u0430\u0437\u043c\u0435\u0440",
-                                       None))
+        self.vert_size_label.setText(QCoreApplication.translate("main_window", u"\u0412\u0435\u0440\u0442. \u0440\u0430\u0437\u043c\u0435\u0440", None))
         self.rank_pb.setText(QCoreApplication.translate("main_window", u"\u0420\u0430\u043d\u0433", None))
-        self.result_label.setText(
-            QCoreApplication.translate("main_window", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442:", None))
-
+        self.result_label.setText(QCoreApplication.translate("main_window", u"\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442:", None))
     # retranslateUi
-
     # retranslateUi
 
     # def save_matrix(self):
